@@ -8,7 +8,7 @@ function BlogCard({ blog, deleteBlogs }) {
   const [isLogged] = state.userAPI.isLogged;
 
   return (
-    <div className="card mb-3" style={{ maxWidth: "100%" }}>
+    <div className="card mb-3 blog_card" style={{ maxWidth: "100%" }}>
       <div className="row g-0">
         <div className="col-md-4 blog_card_img">
           <img
@@ -20,7 +20,9 @@ function BlogCard({ blog, deleteBlogs }) {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{blog.title}</h5>
+            <h5 className="card-title">
+              <Link to={`/blog/${blog._id}`}>{blog.title}</Link>
+            </h5>
             <p className="card-text hide-text">{parse(blog.description)}</p>
             {isLogged ? (
               <p className="card-text d-flex action">

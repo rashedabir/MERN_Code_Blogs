@@ -10,6 +10,7 @@ body {
 
 a {
   color: black;
+  text-decoration: none;
 }
 
 /*--------------------header------------------------------ */
@@ -297,4 +298,24 @@ table thead {
   padding: 5px 10px !important;
   text-transform: capitalize;
   font-size: 13px !important;
+}
+.blog_card a {
+  transition: all 0.2s;
+}
+.blog_card a:hover {
+  color: #f40;
+}
+
+pre {
+  background-color: #444;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+.info {
+  flex-basis: 25%;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
 }
