@@ -24,7 +24,7 @@ const uploadCtrl = {
       }
       cloudinary.v2.uploader.upload(
         file.tempFilePath,
-        { folder: "food" },
+        { folder: "codeBlog" },
         async (err, result) => {
           if (err) throw err;
           removeTmp(file.tempFilePath);
