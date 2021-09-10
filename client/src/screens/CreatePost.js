@@ -2,10 +2,11 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { GlobalState } from "../context/GlobalState";
-import { EditorState, convertToRaw } from "draft-js";
+import { EditorState, convertToRaw, ContentState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import draftToHtml from "draftjs-to-html";
+import htmlToDreaft from "html-to-draftjs";
 import { useHistory, useParams } from "react-router-dom";
 
 function CreatePost() {
@@ -36,7 +37,13 @@ function CreatePost() {
           setDescription(blog.description);
           setImage(blog.images);
           setCategory(blog.category);
-          console.log(blog);
+
+          const contentBlock = htmlToDreaft(blog.description);
+          const contentState = ContentState.createFromBlockArray(
+            contentBlock.contentBlocks
+          );
+          const _editorState = EditorState.createWithContent(contentState);
+          setEditorState(_editorState);
         }
       });
     } else {
