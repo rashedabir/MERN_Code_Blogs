@@ -44,7 +44,7 @@ function Header() {
             )}
             {isLogged ? (
               <li>
-                <NavLink to="/post">post</NavLink>
+                <NavLink to="/create_post">post</NavLink>
               </li>
             ) : (
               <li>
@@ -52,7 +52,7 @@ function Header() {
               </li>
             )}
             {isLogged ? (
-              <li className="btn btn-outline-danger" onClick={logOut}>
+              <li className="btn btn-outline-danger ps-3 ms-3" onClick={logOut}>
                 Log out <i className="fas fa-sign-out-alt mx-1"></i>
               </li>
             ) : (

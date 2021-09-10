@@ -10,6 +10,8 @@ import Contact from "./screens/Contact";
 import Tips from "./screens/Tips";
 import Login from "./screens/Login";
 import { useEffect, useState } from "react";
+import Category from "./screens/Category";
+import CreatePost from "./screens/CreatePost";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -36,7 +38,10 @@ function App() {
                 <Route exact path="/books" component={Books} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/tips" component={Tips} />
-                <Route exact path="/Login" component={Login} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/category" component={Category} />
+                <Route exact path="/create_post" component={CreatePost} />
+                <Route exact path="/edit_post/:id" component={CreatePost} />
               </Switch>
             </div>
           </div>

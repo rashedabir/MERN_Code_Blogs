@@ -56,7 +56,7 @@ const blogCtrl = {
     try {
       const { title, description, images, category } = req.body;
       if (!title || !description || !category) {
-        return res.status(400).json({ msg: "Inavild Product Details" });
+        return res.status(400).json({ msg: "Inavild Blog Details" });
       }
       if (!images) {
         return res.status(400).json({ msg: "No Image is Selected" });
