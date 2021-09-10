@@ -58,6 +58,11 @@ header ul li {
   font-size: 17px;
   font-weight: 500;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+header ul li:hover {
+  color: #f40;
 }
 .menu {
   display: none;
@@ -132,4 +137,25 @@ footer a:hover {
 }
 footer .icon {
   cursor: pointer;
+}
+
+/*---------------------------login------------------------*/
+
+.login {
+  max-width: 450px;
+}
+.login i {
+  color: #f40;
+}
+.login .form-control:focus {
+  box-shadow: none;
+  border: 2px solid #f40;
+}
+.login button {
+  background-color: #f40;
+  color: white;
+  font-weight: 500;
+}
+.login button:focus {
+  box-shadow: none;
 }

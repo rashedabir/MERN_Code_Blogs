@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { GlobalState } from "../context/GlobalState";
 
 function Header() {
   const [menu, setMenu] = useState(false);
+  const state = useContext(GlobalState);
+  const [isLogged, setIsLogged] = state.userAPI.isLogged;
+
+  const logOut = async () => {
+    await axios.get("/user/logout");
+    setIsLogged(false);
+    window.location.href = "/";
+  };
 
   const styleMenu = {
     left: menu ? 0 : "-100%",
@@ -23,15 +33,33 @@ function Header() {
             <li>
               <NavLink to="/books">free books</NavLink>
             </li>
-            <li>
-              <NavLink to="/tips">tips & tricks</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">about me</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact">contact me</NavLink>
-            </li>
+            {isLogged ? (
+              <li>
+                <NavLink to="/category">category</NavLink>
+              </li>
+            ) : (
+              <li>
+                <NavLink to="/tips">tips & tricks</NavLink>
+              </li>
+            )}
+            {isLogged ? (
+              <li>
+                <NavLink to="/post">post</NavLink>
+              </li>
+            ) : (
+              <li>
+                <NavLink to="/about">about me</NavLink>
+              </li>
+            )}
+            {isLogged ? (
+              <li className="btn btn-outline-danger" onClick={logOut}>
+                Log out <i className="fas fa-sign-out-alt mx-1"></i>
+              </li>
+            ) : (
+              <li>
+                <NavLink to="/contact">contact me</NavLink>
+              </li>
+            )}
             <li className="menu cross" onClick={() => setMenu(!menu)}>
               <i className="fas fa-times"></i>
             </li>

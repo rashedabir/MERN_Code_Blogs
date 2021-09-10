@@ -1,7 +1,7 @@
 import React from "react";
 
 function Tips() {
-  return <div className="container py-3">tips & tricks</div>;
+  return <div className="bg-white border container py-3">tips & tricks</div>;
 }
 
 export default Tips;
