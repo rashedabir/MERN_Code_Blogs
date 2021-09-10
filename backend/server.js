@@ -18,6 +18,8 @@ app.use(
 
 app.use("/user", require("./routes/userRouter"));
 app.use("/api", require("./routes/upload"));
+app.use("/api", require("./routes/categoryRouter"));
+app.use("/api", require("./routes/blogRouter"));
 
 const PORT = process.env.PORT || 5000;
 const URI = process.env.MONGODB_URL;
