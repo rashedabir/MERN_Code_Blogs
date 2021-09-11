@@ -26,7 +26,7 @@ function BlogDetails() {
       <h3 className="py-3">{details.title}</h3>
       <p className="card-text">
         <small className="text-muted text-uppercase">
-          <i className="far fa-user me-2"></i>codeblogs -{" "}
+          <i className="far fa-user me-2"></i>codeblogs •{" "}
           {new Date(details.createdAt).toDateString()}
         </small>
       </p>

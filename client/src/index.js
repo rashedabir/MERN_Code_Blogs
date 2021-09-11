@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { DataProvider } from "./context/GlobalState";
 import axios from "axios";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 axios.defaults.withCredentials = true;
 

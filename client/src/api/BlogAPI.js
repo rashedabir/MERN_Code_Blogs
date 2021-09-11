@@ -11,7 +11,7 @@ function BlogAPI() {
   useEffect(() => {
     const getBlogs = async () => {
       setLoading(true);
-      const res = await axios.get(`/api/blogs?limit=${page * 8}`);
+      const res = await axios.get(`/api/blogs?limit=${page * 6}`);
       setBlogs(res.data.blogs);
       setResult(res.data.result);
       setLoading(false);

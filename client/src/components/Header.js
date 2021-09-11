@@ -30,9 +30,6 @@ function Header() {
             <li>
               <NavLink to="/">home</NavLink>
             </li>
-            <li>
-              <NavLink to="/books">free books</NavLink>
-            </li>
             {isLogged ? (
               <li>
                 <NavLink to="/category">category</NavLink>
