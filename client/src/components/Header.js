@@ -9,7 +9,7 @@ function Header() {
   const [isLogged, setIsLogged] = state.userAPI.isLogged;
 
   const logOut = async () => {
-    await axios.get("/user/logout");
+    await axios.get("https://code-blogs-tech.herokuapp.com/user/logout");
     setIsLogged(false);
     window.location.href = "/";
   };

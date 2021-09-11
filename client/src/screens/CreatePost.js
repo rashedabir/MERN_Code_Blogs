@@ -61,7 +61,7 @@ function CreatePost() {
     try {
       if (onEdit) {
         await axios.put(
-          `/api/blogs/${id}`,
+          `https://code-blogs-tech.herokuapp.com/api/blogs/${id}`,
           {
             title: title,
             category: category,
@@ -75,7 +75,7 @@ function CreatePost() {
         toast.warn("Post Updated");
       } else {
         await axios.post(
-          "/api/blogs",
+          "https://code-blogs-tech.herokuapp.com/api/blogs",
           {
             title: title,
             category: category,
@@ -100,12 +100,16 @@ function CreatePost() {
       let formData = new FormData();
       formData.append("file", file);
       setLoading(true);
-      const res = await axios.post("/api/upload", formData, {
-        headers: {
-          "content-type": "multipart/form-data",
-          Authorization: token,
-        },
-      });
+      const res = await axios.post(
+        "https://code-blogs-tech.herokuapp.com/api/upload",
+        formData,
+        {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: token,
+          },
+        }
+      );
       setLoading(false);
       setImage(res.data);
     } catch (error) {
@@ -117,7 +121,7 @@ function CreatePost() {
     try {
       setLoading(true);
       await axios.post(
-        "/api/destroy",
+        "https://code-blogs-tech.herokuapp.com/api/destroy",
         { public_id: image.public_id },
         {
           headers: { Authorization: token },

@@ -17,15 +17,18 @@ function Tips() {
       if (window.confirm(`Want to Delete ${name}`)) {
         setLoading(true);
         const deleteImg = axios.post(
-          "/api/destroy",
+          "https://code-blogs-tech.herokuapp.com/api/destroy",
           { public_id },
           {
             headers: { Authorization: token },
           }
         );
-        const deleteBlog = axios.delete(`/api/blogs/${id}`, {
-          headers: { Authorization: token },
-        });
+        const deleteBlog = axios.delete(
+          `https://code-blogs-tech.herokuapp.com/api/blogs/${id}`,
+          {
+            headers: { Authorization: token },
+          }
+        );
         await deleteImg;
         await deleteBlog;
         setCallback(!callback);

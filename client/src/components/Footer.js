@@ -20,9 +20,15 @@ function Footer() {
             <div className="col-lg-2 mx-auto text-center p-2">
               <h5 className="text-uppercase">follow me</h5>
               <div className="de-flex">
-                <i className="fab fa-facebook-square mx-1 fs-3 icon"></i>
-                <i className="fab fa-github-square mx-1 fs-3 icon"></i>
-                <i className="fab fa-linkedin mx-1 fs-3 icon"></i>
+                <a href="https://www.facebook.com/abu.rashed.abir/">
+                  <i className="fab fa-facebook-square mx-1 fs-3 icon"></i>
+                </a>
+                <a href="https://www.github.com/rashedabir/">
+                  <i className="fab fa-github-square mx-1 fs-3 icon"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rashedabir/">
+                  <i className="fab fa-linkedin mx-1 fs-3 icon"></i>
+                </a>
               </div>
             </div>
           </div>

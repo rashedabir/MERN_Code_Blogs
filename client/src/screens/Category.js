@@ -20,7 +20,7 @@ function Category() {
     if (onEdit) {
       try {
         await axios.put(
-          `/api/category/${id}`,
+          `https://code-blogs-tech.herokuapp.com/api/category/${id}`,
           {
             name: category,
           },
@@ -37,7 +37,7 @@ function Category() {
     } else {
       try {
         await axios.post(
-          "/api/category",
+          "https://code-blogs-tech.herokuapp.com/api/category",
           {
             name: category,
           },
@@ -62,9 +62,12 @@ function Category() {
 
   const deleteCategory = async (id, name) => {
     if (window.confirm(`Want to delete ${name} Category`)) {
-      await axios.delete(`/api/category/${id}`, {
-        headers: { Authorization: token },
-      });
+      await axios.delete(
+        `https://code-blogs-tech.herokuapp.com/api/category/${id}`,
+        {
+          headers: { Authorization: token },
+        }
+      );
       setCallback(!callback);
       toast.error("Category Deleted");
     }

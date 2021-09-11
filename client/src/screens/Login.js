@@ -9,7 +9,7 @@ function Login() {
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/user/login", {
+      await axios.post("https://code-blogs-tech.herokuapp.com/user/login", {
         userName: userName,
         password: password,
       });

@@ -15,6 +15,9 @@ import BlogDetails from "./screens/BlogDetails";
 import { GlobalState } from "./context/GlobalState";
 import NotFound from "./screens/NotFound";
 import Loader from "react-loader-spinner";
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   const state = useContext(GlobalState);
