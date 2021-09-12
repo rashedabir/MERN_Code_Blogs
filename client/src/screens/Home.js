@@ -47,17 +47,20 @@ function Home() {
       {loading ? (
         <Loader
           type="Bars"
-          color="#00BFFF"
+          color="#122"
           height={100}
-          width={100}
+          width="100%"
           timeout={loading} //3 secs
         />
       ) : (
         <div className="pt-3">
           {blogs &&
-            blogs.map((blog) => (
-              <BlogCard blog={blog} deleteBlogs={deleteBlogs} />
-            ))}
+            blogs
+              .slice(0)
+              .reverse()
+              .map((blog) => (
+                <BlogCard blog={blog} deleteBlogs={deleteBlogs} />
+              ))}
         </div>
       )}
       <LoadMore />
