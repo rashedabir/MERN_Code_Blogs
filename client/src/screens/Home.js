@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import BlogCard from "../components/BlogCard";
 import LoadMore from "../components/LoadMore";
 import { GlobalState } from "../context/GlobalState";
-import Loader from "react-loader-spinner";
+import Loading from "../components/Loading";
 
 function Home() {
   const state = useContext(GlobalState);
@@ -45,13 +45,7 @@ function Home() {
     <div className="bg-white border container py-3">
       <h5 className="text-uppercase title">all post</h5>
       {loading ? (
-        <Loader
-          type="Bars"
-          color="#122"
-          height={100}
-          width="100%"
-          timeout={loading} //3 secs
-        />
+        <Loading loading={loading} />
       ) : (
         <div className="pt-3">
           {blogs &&
@@ -64,15 +58,7 @@ function Home() {
         </div>
       )}
       <LoadMore />
-      {blogs.length < 1 && (
-        <Loader
-          type="Bars"
-          color="#122"
-          height={100}
-          width="100%"
-          timeout={loading} //3 secs
-        />
-      )}
+      {blogs.length < 1 && <Loading loading={loading} />}
     </div>
   );
 }
