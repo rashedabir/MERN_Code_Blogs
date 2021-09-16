@@ -27,24 +27,24 @@ function Header() {
         </div>
         <div>
           <ul style={styleMenu}>
-            <li>
+            <li onClick={() => setMenu(!menu)}>
               <NavLink to="/">home</NavLink>
             </li>
             {isLogged ? (
-              <li>
+              <li onClick={() => setMenu(!menu)}>
                 <NavLink to="/category">category</NavLink>
               </li>
             ) : (
-              <li>
+              <li onClick={() => setMenu(!menu)}>
                 <NavLink to="/tips">tips & tricks</NavLink>
               </li>
             )}
             {isLogged ? (
-              <li>
+              <li onClick={() => setMenu(!menu)}>
                 <NavLink to="/create_post">post</NavLink>
               </li>
             ) : (
-              <li>
+              <li onClick={() => setMenu(!menu)}>
                 <NavLink to="/about">about me</NavLink>
               </li>
             )}
@@ -53,7 +53,7 @@ function Header() {
                 Log out <i className="fas fa-sign-out-alt mx-1"></i>
               </li>
             ) : (
-              <li>
+              <li onClick={() => setMenu(!menu)}>
                 <NavLink to="/contact">contact me</NavLink>
               </li>
             )}
